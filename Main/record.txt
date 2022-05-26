@@ -1,0 +1,2 @@
+1,Kerik,3,4563,female,45,z2453,-,Yes,No,None,None,None,None
+3,eieieO,REWEGQW,141,female,545,86743,-,Yes,Yes,Pfizer,None,None,None
