@@ -25,7 +25,7 @@ public class Appcontroller {
 
     @FXML
     void Show_dash(MouseEvent event) throws IOException {
-        DynamicViews.loadBorderCenter(Main_pane,"Dashbroad");
+        DynamicViews.loadBorderCenter(Main_pane,"dash");
 
     }
 

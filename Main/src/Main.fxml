@@ -106,31 +106,6 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </VBox>
-                  <VBox alignment="CENTER_LEFT" prefHeight="123.0" style="-fx-background-color: #eaeaea; -fx-cursor: hand; -fx-background-radius: 20;">
-                     <children>
-                        <Button mnemonicParsing="false" style="-fx-background-color: tramsparent;" text="User Manual">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fx:id="compImage13" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@png/project1%20comp-03-01.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                     <padding>
-                        <Insets bottom="20.0" right="20.0" top="20.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </VBox>
                </children>
                <HBox.margin>
                   <Insets />

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -27,16 +28,21 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Path;
 import javafx.stage.StageStyle;
 
 public class TeacherController implements Initializable{
 
+    @FXML
+    private Label AllShowData;
+    
     @FXML
     private ChoiceBox<String> ChoiceCovid;
 
@@ -145,6 +151,8 @@ public class TeacherController implements Initializable{
 
         ChoiceVaccine.getItems().addAll(QandA);
         ChoiceVaccine.setOnAction(this::getQAAV);
+
+        AllShowData.setText(String.valueOf(getLineData("E:/KMITL/1.2/oop/Project1/Main/record.txt")));
         //
         
         try {
@@ -412,7 +420,7 @@ public class TeacherController implements Initializable{
                     Dose2 = line[11];
                     Dose3 = line[12];
                     Dose4 = line[13];
-                    System.out.println("-----1-");
+                    //System.out.println("-----1-");
                 if (line[0].equalsIgnoreCase(editAim)) {
                     pw.println(Id +","+FName+","+LName+","+Age+","+gender+","+W8+","+High+","+Disease+","+Covid+","+Vaccine+","+stDose+","+ndDose+","+rdDose+","+thDose);
                 }
@@ -459,7 +467,7 @@ public class TeacherController implements Initializable{
             //x.useDelimiter("[,\n]");
 
             while(x.hasNext()) {
-               /* Id = x.next();
+               /*Id = x.next();
                 Name = x.next();*/
                 String[] line = (x.nextLine()).split(",");
                     Id = line[0];    
@@ -480,12 +488,13 @@ public class TeacherController implements Initializable{
                 if (!line[0].equalsIgnoreCase(editAim)) {
                     pw.println(Id +","+ Name+","+LastName+","+Age+","+gender+","+W8+","+High+","+Disease+","+Inf+","+Vacc+","+Dose1+","+Dose2+","+Dose3+","+Dose4);
                 }
-                
             }
-
             x.close();
             pw.flush();
             pw.close();
+            bw.close();
+            x.close();
+            fw.close();
             oldFile.delete();
             File dump = new File(filepath);
             newFile.renameTo(dump);
@@ -494,4 +503,20 @@ public class TeacherController implements Initializable{
         }
     }
 
+    public static long getLineData(String fileName) {
+
+        java.nio.file.Path path = Paths.get(fileName);
+  
+        long lines = 0;
+        try {
+            lines = Files.lines(path).count();
+  
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+  
+        return lines;
+  
+    }
+    
 }

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="pnlDashboard" prefHeight="760.0" prefWidth="1158.0" style="-fx-background-color: ffffff; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DashController">
+   <children>
+      <HBox alignment="CENTER" layoutY="-4.0" prefHeight="145.0" prefWidth="1158.0" style="-fx-background-color: #ececec; -fx-background-radius: 15;">
+         <children>
+            <VBox prefHeight="126.0" prefWidth="171.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Label fx:id="TotalData" alignment="CENTER" prefHeight="46.0" prefWidth="177.0" text="22000">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                     <textFill>
+                        <LinearGradient endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="0.14814814925193787" blue="0.14814814925193787" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="181.0" text="Total">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="126.0" prefWidth="190.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Label fx:id="TotalT" alignment="CENTER" prefHeight="46.0" prefWidth="228.0" text="22000">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="232.0" text="Teacher">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="126.0" prefWidth="190.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Label fx:id="TotalS" alignment="CENTER" prefHeight="46.0" prefWidth="228.0" text="22000">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="232.0" text="Student">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+      <PieChart fx:id="ChartPopu" layoutX="48.0" layoutY="183.0" prefHeight="500.0" prefWidth="550.0" title="Total Data" titleSide="BOTTOM" />
+      <PieChart fx:id="ChartInfS" layoutX="577.0" layoutY="137.0" prefHeight="289.0" prefWidth="457.0" title="Infected with COVID in students" titleSide="BOTTOM" />
+      <PieChart fx:id="ChartInfT" layoutX="577.0" layoutY="386.0" prefHeight="323.0" prefWidth="457.0" title="Infected with COVID in teacher" titleSide="BOTTOM" />
+   </children>
+</Pane>

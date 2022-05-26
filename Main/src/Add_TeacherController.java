@@ -112,6 +112,7 @@ public class Add_TeacherController implements Initializable {
     public void initialize(URL argo,ResourceBundle arg1){
         choiceGender.getItems().addAll(Gender);
         choiceGender.setOnAction(this :: getGender);
+        
         ChioceDose1.getItems().addAll(Vaccin);
         ChioceDose1.setOnAction(this::getDose1);
         ChioceDose2.getItems().addAll(Vaccin);

@@ -15,13 +15,7 @@ public class App extends Application{
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        // TODO Auto-generated method stub
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-        //Parent Dashbroad = FXMLLoader.load(getClass().getResource("Dashbroad.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();*/
+    
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
         Parent root = fxmlLoader.load();
         Scene lay = new Scene(root);

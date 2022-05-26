@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -27,6 +28,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -37,6 +39,9 @@ import javafx.stage.StageStyle;
 
 public class StudentController implements Initializable{
 
+    @FXML
+    private Label AllShowData;
+    
     @FXML
     private ChoiceBox<String> ChoiceCovid;
 
@@ -145,6 +150,8 @@ public class StudentController implements Initializable{
 
         ChoiceVaccine.getItems().addAll(QandA);
         ChoiceVaccine.setOnAction(this::getQAAV);
+
+        AllShowData.setText(String.valueOf(getLineData("E:/KMITL/1.2/oop/Project1/Main/recordStu.txt")));
         //
         
         try {
@@ -492,6 +499,22 @@ public class StudentController implements Initializable{
         } catch (Exception var13) {
             System.out.println("Error");
         }
+    }
+
+    public static long getLineData(String fileName) {
+
+        java.nio.file.Path path = Paths.get(fileName);
+  
+        long lines = 0;
+        try {
+            lines = Files.lines(path).count();
+  
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+  
+        return lines;
+  
     }
 
 }
